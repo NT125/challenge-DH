@@ -1,0 +1,19 @@
+# Node
+node_modules/
+
+# Build files
+build/
+dist/
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Logs
+logs/
+*.log
+
+# Sequelize
+/config/config.json
+/migrations/
+/seeders/
