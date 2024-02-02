@@ -2,14 +2,14 @@ import React from 'react'
 
 const TitleSection = () => {
     return (
-        <div className='text-slate-400'>
+        <div>
 
             <div>
-                <h1>Búsqueda y selección</h1>
-                <p className="text-center">Encontramos talento para tu empresa, en todos los cargos administrativos, profesionales y técnicos.</p>
+                <h2>Búsqueda y selección</h2>
+                <p className="text-center subtitle">Encontramos talento para tu empresa, en todos los cargos administrativos, profesionales y técnicos.</p>
             </div>
 
-            <img src="/assets/banner.jpg" alt="Recursos Humanos" className="mx-auto" />
+            <img src="/assets/banner.jpg" alt="Recursos Humanos" className="mx-auto rounded-lg shadow-md shadow-slate-300 m-4 p-0" />
             
         </div>
     )

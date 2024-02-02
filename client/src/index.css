@@ -17,7 +17,7 @@ code {
     monospace;
 }
 
-h1{
+h2{
   padding: .5rem;
   
   font-size: 42px;
@@ -26,4 +26,8 @@ h1{
 
 img{
   padding:1rem;
+}
+
+h2, .subtitle{
+  color:#94a3b8;
 }
