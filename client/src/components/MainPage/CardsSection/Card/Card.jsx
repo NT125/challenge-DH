@@ -8,7 +8,7 @@ const Card = (props) => {
     } = props;
 
     return (
-        <div className='rounded-lg bg-white shadow-md shadow-slate-300 m-4 p-4 basis-1/4'>
+        <div className='rounded-lg bg-white shadow-md shadow-slate-300 md:m-4 md:p-4 p-2 m-2 basis1/3 md:basis-1/4'>
 
             <div className="flex flex-col pb-4">
 
@@ -16,7 +16,7 @@ const Card = (props) => {
 
                 <span className='font-bold'>{nombre}</span>
                 <span className='subtitle text-sm'>{puesto}</span>
-                
+
             </div>
 
             <hr />
