@@ -18,7 +18,7 @@ const ActionButtons = () => {
     ]
 
     return (
-        <div className='flex shadow-md rounded-lg shadow-slate-200 '>
+        <div className='flex shadow-md rounded-lg shadow-slate-200 self-center mt-4 md:m-0'>
             {
                 buttons.map((button, i) => <Button key={button.icon.trim() + i} icon={button.icon}/> )
             }
