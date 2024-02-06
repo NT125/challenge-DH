@@ -3,7 +3,7 @@ import Card from './Card/Card'
 
 const CardsSection = () => {
     return (
-        <div>
+        <div id='aspirantes'>
             <h2>Aspirantes</h2>
 
             <div className="flex flex-wrap justify-center">

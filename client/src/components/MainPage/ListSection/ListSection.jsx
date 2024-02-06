@@ -7,7 +7,7 @@ const ListSection = (props) => {
     const profesiones = ["Abogado", "Arquitecto", "Botánico", "Computista", "Economista", "Técnico de Sonido", "Profesor", "Linguista"]
 
     return (
-        <div>
+        <div id='profesiones'>
             <h2>Profesiones</h2>
 
             <div className="w-full md:w-3/4 mx-auto shadow-md shadow-slate-200 p-4 rounded-lg">

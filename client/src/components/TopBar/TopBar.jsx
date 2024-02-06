@@ -5,7 +5,7 @@ import ActionButtons from './ActionButtons/ActionButtons'
 
 const TopBar = () => {
   return (
-    <div className='w-full flex flex-col md:flex-row justify-between p-4 bg-white lg:border border-slate-200'>
+    <div className='w-full flex flex-col md:flex-row justify-between p-4 bg-white lg:border border-slate-200 lg:sticky top-0'>
       <SearchBar />
       <ActionButtons />
     </div>

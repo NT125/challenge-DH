@@ -2,7 +2,7 @@ import React from 'react'
 
 const TitleSection = () => {
     return (
-        <div>
+        <div id='empresas'>
 
             <div>
                 <h2>Búsqueda y selección</h2>
