@@ -58,6 +58,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         tableName: 'applicants',
+        paranoid: true
     });
 
     Applicant.associate = (models) => {

@@ -4,13 +4,16 @@ const professionController = {
     list: async (req,res) => {
         try {
             const professions = await Profession.findAll({
-                raw:true
+                raw:true,
+                attributes: ['id','name']
             });
             if (professions) {
                 return res.status(200).json({
                     meta: {
                         'error': false,
-                        'status': res.status,
+                        'count': professions.length,
+                        'status': 200,
+                        'url': req.protocol + '://' + req.get('host') + '/professions'
                     },
                     data: {
                         professions
@@ -20,7 +23,7 @@ const professionController = {
                 return res.status(404).json({
                     meta: {
                         'error': true,
-                        'status': res.status
+                        'status': 400
                     },
                     msg: 'No hay profesiones registradas en la base de datos.'
                 });
@@ -29,7 +32,7 @@ const professionController = {
             return res.status(500).json({
                 meta: {
                     'error': true,
-                    'status': res.status
+                    'status': 500
                 },
                 error: {
                     msg: 'Error en la consulta',
