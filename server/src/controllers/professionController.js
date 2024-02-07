@@ -7,27 +7,26 @@ const professionController = {
                 raw:true,
                 attributes: ['id','name']
             });
-            if (professions) {
-                return res.status(200).json({
-                    meta: {
-                        'error': false,
-                        'count': professions.length,
-                        'status': 200,
-                        'url': req.protocol + '://' + req.get('host') + '/professions'
-                    },
-                    data: {
-                        professions
-                    }
-                })
-            } else {
+            if (!professions || professions.length <= 0) {
                 return res.status(404).json({
                     meta: {
                         'error': true,
                         'status': 400
                     },
-                    msg: 'No hay profesiones registradas en la base de datos.'
+                    msg: 'No hay profesiones registradas'
                 });
-            }
+            };
+            return res.status(200).json({
+                meta: {
+                    'error': false,
+                    'count': professions.length,
+                    'status': 200,
+                    url: `${req.protocol}://${req.get('host')}/api/professions`
+                },
+                data: {
+                    professions
+                }
+            })
         } catch (error) {
             return res.status(500).json({
                 meta: {

@@ -12,44 +12,45 @@ const applicantsController = {
                     attributes: ['id', 'name']
                 }]
             });
-            if (getApplicants) {
-                const applicants = getApplicants.map(applicant => ({
-                    id: applicant.id,
-                    DNI: applicant.DNI,
-                    firstName: applicant.firstName,
-                    email: applicant.email,
-                    phone: applicant.phone,
-                    linkedinURL: applicant.linkedinURL,
-                    dateOfBirth: applicant.dateOfBirth,
-                    genre: applicant.genre,
-                    image: applicant.image ? req.protocol + '://' + req.get('host') + '/uploads/applicants/' + applicant.image : null,
-                    profession: [
-                        {
-                            id: applicant['professions.id'],
-                            name: applicant['professions.name']
-                        }
-                    ]
-                }));
-                return res.status(200).json({
-                    meta: {
-                        'error': false,
-                        'count': applicants.length,
-                        'status': 200,
-                        'url': req.protocol + '://' + req.get('host') + '/applicants'
-                    },
-                    data: {
-                        applicants
-                    }
-                });
-            } else {
+            if (!getApplicants || getApplicants.length <= 0) {
                 return res.status(404).json({
                     meta: {
                         'error': true,
                         'status': 404
                     },
-                    msg: 'No hay aspirantes'
-                })
-            }
+                    msg: 'No hay aspirantes registrados'
+                });
+            };
+            const applicants = getApplicants.map(aplicant => {
+                const { id, DNI, firstName, lastName, email, phone, linkedinURL, dateOfBirth, genre, image, experiencieLevel,'professions.id':professionId,'professions.name':professionName} = aplicant;
+                return {
+                    id,
+                    DNI,
+                    firstName,
+                    lastName,
+                    email,
+                    phone: phone ? phone : null,
+                    linkedinURL: linkedinURL ? linkedinURL : null,
+                    dateOfBirth,
+                    genre,
+                    experiencieLevel,
+                    image: image ? `${req.protocol}://${req.get('host')}/uploads/applicants/${image}` : null,
+                    profession: [{
+                        id: professionId,
+                        name: professionName
+                    }]
+                }
+            });
+            return res.status(200).json({
+                meta: {
+                    length: applicants.length,
+                    status: 200,
+                    url: `${req.protocol}://${req.get('host')}/api/applicants`
+                },
+                data: {
+                    applicants
+                }
+            })
 
         } catch (err) {
             console.log(err);
