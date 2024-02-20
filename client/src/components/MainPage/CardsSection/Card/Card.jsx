@@ -12,7 +12,7 @@ const Card = (props) => {
 
             <div className="flex flex-col pb-4">
 
-                <img src={`/assets/${foto}`} alt={`Foto de ${nombre}`} className='w-1/2 mx-auto rounded-full'/>
+                <img src={`./assets/img/${foto}`} alt={`Foto de ${nombre}`} className='w-1/2 md:w-full mx-auto rounded-full'/>
 
                 <span className='font-bold'>{nombre}</span>
                 <span className='subtitle text-sm'>{puesto}</span>

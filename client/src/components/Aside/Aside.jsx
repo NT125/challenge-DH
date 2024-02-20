@@ -8,7 +8,7 @@ const Aside = () => {
 
                 <div className="flex-row mb-8">
                     <div className="font-bold flex">
-                        <img src="/assets/logo-dh.png" alt="Logo de Digital House" className='w-16 p-0 cursor-default pointer-events-none' />
+                        <img src="/assets/img/logo-dh.png" alt="Logo de Digital House" className='w-16 p-0 cursor-default pointer-events-none' />
                         <span className="my-auto text-black">Digital House</span>
                     </div>
                 </div>
