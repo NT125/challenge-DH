@@ -4,7 +4,7 @@ import AsideMobile from './components/Aside/AsideMobile';
 import MainPage from './components/MainPage/MainPage';
 import TopBar from './components/TopBar/TopBar';
 
-function App() {
+export default function App() {
     return (
         <div className="App">
             <div className="block lg:hidden">
@@ -28,5 +28,3 @@ function App() {
         </div>
     );
 }
-
-export default App;
