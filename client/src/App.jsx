@@ -1,4 +1,3 @@
-import './App.css';
 import Aside from './components/Aside/Aside';
 import AsideMobile from './components/Aside/AsideMobile';
 import MainPage from './components/MainPage/MainPage';

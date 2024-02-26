@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import ListItem from './ListItem/ListItem'
 
 const ListSection = (props) => {
 
-    {/** Profesiones Placeholder */}
-    const profesiones = ["Abogado", "Arquitecto", "Botánico", "Computista", "Economista", "Técnico de Sonido", "Profesor", "Linguista"]
-
+    const [profession, setProfession] = useState([]);
+    const url = "http://localhost:3080/api/professions"
+    const fetchApi = async() =>{
+        try{
+            const response = await fetch(url);
+            const data = await response.json();
+            setProfession(data.data.professions);
+        }catch(error){
+            console.error("Error:",error)
+        }
+        
+    }
+    useEffect(()=>{
+    fetchApi()
+    },[])
     return (
         <div id='profesiones'>
             <h2>Profesiones</h2>
@@ -16,7 +28,7 @@ const ListSection = (props) => {
                     <li className="w-full px-4 py-2 border border-slate-200 rounded-t-lg bg-blue-600 text-white text-2xl">Lista de Profesiones</li>
 
                     {
-                        profesiones.map((profesion, i) => <ListItem key={"i" + profesion} profesion={profesion}/> )
+                       profession.map((profession) => (<ListItem key={profession.id} profession={profession} />))
                     }
                 </ul>
 
