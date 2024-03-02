@@ -13,7 +13,7 @@ const AsideMobile = () => {
 
                 {isOpen && (
                     <div className='flex flex-col md:flex-row'>
-                        <ul className='py-3 text-slate-400 font-bold basis-1/2'>
+                        <ul className='py-3 text-slate-400 font-bold basis-1/2 text-center'>
                             <li className='pt-2 pb-3'><a href="#" className='transition-all ease-out focus:text-slate-600'><i className="fa-regular fa-building pr-1"></i> Empresas</a></li>
                             <li className='pb-3'><a href="#" className='transition-all ease-out focus:text-slate-600'><i className="fa-regular fa-user pr-1"></i>Aspirantes</a></li>
                             <li className='pb-3'><a href="#" className='transition-all ease-out focus:text-slate-600'><i className="fa-solid fa-list-ul pr-1"></i>Profesiones</a></li>

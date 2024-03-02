@@ -19,8 +19,8 @@ const Card = ({number}) => {
     return (
         <div className='rounded-lg bg-white shadow-md shadow-slate-300 md:m-4 md:p-4 p-2 m-2 basis1/3 md:basis-1/4'>
             {applicant && (
-                <>
-                    <div className="flex flex-col pb-4">
+                <div>
+                    <div className="flex flex-col pb-4 text-center">
                         <img src={`./assets/img/${applicant.image}`} alt={`Foto de ${applicant.firstName}`} className='w-1/2 md:w-full mx-auto rounded-full'/>
                         <span className='font-bold'>{applicant.firstName}</span>
                         <span className='subtitle text-sm'>{applicant.profession[0].name}</span>
@@ -37,7 +37,7 @@ const Card = ({number}) => {
                             <i className="fa-regular fa-envelope"></i>
                         </button>
                     </div>
-                </>
+                </div>
             )}
         </div>
     );

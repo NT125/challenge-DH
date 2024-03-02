@@ -8,19 +8,16 @@ export default function App() {
         <div className="App">
             <div className="block lg:hidden">
                 <AsideMobile />
+                <MainPage />
             </div>
 
             <div className="flex">
                 <div className="hidden lg:block basis-0 lg:basis-1/4">
-                    <Aside/>
+                    <Aside />
                 </div>
                 <div className="hidden lg:block w-full basis-full lg:basis-3/4">
                     <TopBar />
                     <MainPage />
-                </div>
-                {/**Solución provisoria */}
-                <div className="block lg:hidden">
-                    <MainPage/>
                 </div>
             </div>
 
