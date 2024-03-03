@@ -21,8 +21,8 @@ const Card = ({number}) => {
             {applicant && (
                 <div>
                     <div className="flex flex-col pb-4 text-center">
-                        <img src={`./assets/img/${applicant.image}`} alt={`Foto de ${applicant.firstName}`} className='w-1/2 md:w-full mx-auto rounded-full'/>
-                        <span className='font-bold'>{applicant.firstName}</span>
+                        <img src={`./assets/img/${applicant.image}`} alt={`Foto de ${applicant.firstName}`} className='w-64 p-6 md:w-full mx-auto rounded-full'/>
+                        <span className='font-bold'>{applicant.firstName} {applicant.lastName}</span>
                         <span className='subtitle text-sm'>{applicant.profession[0].name}</span>
                     </div>
                     <hr />
