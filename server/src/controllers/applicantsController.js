@@ -5,7 +5,7 @@ const applicantsController = {
         try {
             const getApplicants = await Applicant.findAll({
                 raw: true,
-                attributes: ['id', 'DNI', 'firstName', 'email', 'phone', 'linkedinURL', 'dateOfBirth', 'genre', 'image', 'professionId', 'experiencieLevel'],
+                attributes: ['id', 'DNI', 'firstName', 'lastName', 'email', 'phone', 'linkedinURL', 'dateOfBirth', 'genre', 'image', 'professionId', 'experiencieLevel'],
                 include: [{
                     model: Profession,
                     as: 'professions',
@@ -34,7 +34,7 @@ const applicantsController = {
                     dateOfBirth,
                     genre,
                     experiencieLevel,
-                    image: image ? `${req.protocol}://${req.get('host')}/uploads/applicants/${image}` : null,
+                    image,
                     profession: [{
                         id: professionId,
                         name: professionName

@@ -17,3 +17,5 @@ logs/
 /config/config.json
 /migrations/
 /seeders/
+
+.env
